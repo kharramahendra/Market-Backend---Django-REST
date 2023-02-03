@@ -7,12 +7,22 @@ from django.forms.models import model_to_dict
 
 
 @api_view(['POST','GET'])
+def home(request):
+    prices_query = Post.objects.filter(category='Price').order_by('-timestamp')[:3]
+    news_query = Post.objects.filter(category='News').order_by('-timestamp')[:3]
+    prices = PostSerializer(prices_query,many=True).data
+    news = PostSerializer(news_query,many=True).data
+    print("no error here")
+    return Response({"prices":prices,"news":news})
+
+
+
+@api_view(['POST','GET'])
 def search(request):
     search_query = request.data.get('slug')
     postcontent= Post.objects.filter(content__icontains=search_query)
     postcategory =Post.objects.filter(category__icontains=search_query)
-    postsubcategory= Post.objects.filter(sub_category__icontains=search_query)
-    allposts_query=  postcontent.union(postcategory,postsubcategory)
+    allposts_query=  postcontent.union(postcategory)
     all_posts = PostSerializer(allposts_query,many=True).data
     print(all_posts)
     return Response({"posts":all_posts})
@@ -52,10 +62,16 @@ def contact(request):
 
 
 @api_view(['POST','GET'])
-def news(request):
-    # sub_category = request.data.get('slug')
-    posts_query = Post.objects.all().order_by('-timestamp')
+def prices(request):
+    
+    posts_query = Post.objects.all(category='Price').order_by('-timestamp')
     posts = PostSerializer(posts_query,many=True).data
     return Response({"posts":posts})
 
 
+@api_view(['POST','GET'])
+def news(request):
+   
+    posts_query = Post.objects.filter(category='News').order_by('-timestamp')
+    posts = PostSerializer(posts_query,many=True).data
+    return Response({"posts":posts})

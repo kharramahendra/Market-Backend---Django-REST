@@ -13,7 +13,9 @@ admin.site.site_header = "Tensorcodes"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/',views.home),
     path('news/',views.news),
+    path('prices/',views.news),
 
     path('search/',views.search),
     path('contact/',views.contact),
