@@ -14,7 +14,7 @@ class KeywordSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     keywords = KeywordSerializer(many=True,read_only=True)
-    timestamp=serializers.DateTimeField(format="%a %b %d, %Y")
+    timestamp=serializers.DateTimeField(format="%d %b, %Y %A")
     class Meta:
         model = Post
         fields = ['sno','content','slug','title','keywords','category','timestamp','image','image_url']
