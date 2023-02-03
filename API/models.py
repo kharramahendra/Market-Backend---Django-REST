@@ -13,6 +13,10 @@ import datetime
 # from ckeditor.fields import RichTextField as HTMLField
 now = datetime.datetime.now()
 
+category_choices =(
+    ("News", "News"),
+    ("Price", "Price"),
+)
 
 
 
@@ -29,6 +33,7 @@ class Post(models.Model):
     title = models.CharField(max_length=2000)
     slug =  models.SlugField(blank=True,unique=True,max_length=255)
     content = HTMLField(default="")
+    category =  models.CharField(max_length = 50,choices = category_choices,default = '1')
     keywords = models.ManyToManyField(Keyword)
     timestamp=models.DateTimeField(default=now,blank=True)
     image = models.ImageField(upload_to='postimages',blank=True,null=True)
