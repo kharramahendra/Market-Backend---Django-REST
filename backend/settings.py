@@ -72,12 +72,12 @@ mimetypes.add_type("text/css", ".css", True)
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -87,16 +87,16 @@ DATABASES = {
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'finaldb',
-#         'USER': 'postgres',
-#         'PASSWORD': '.adgjm78tensorcodes',
-#         'HOST': 'database-1.cjnx2ipizipl.ap-northeast-1.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mandi',
+        'USER': 'postgres',
+        'PASSWORD': '.adgjm78tensorcodes',
+        'HOST': 'database-2.cjnx2ipizipl.ap-northeast-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # import dj_database_url
