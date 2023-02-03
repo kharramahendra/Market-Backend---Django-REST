@@ -15,7 +15,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',views.home),
     path('news/',views.news),
-    path('prices/',views.news),
+    path('prices/',views.prices),
 
     path('search/',views.search),
     path('contact/',views.contact),
