@@ -42,7 +42,7 @@ class Post(models.Model):
     image_url = models.CharField(max_length=1000,default="",blank=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify((str(self.title) +""+str(self.category)+str(random.randint(0, 99))+str(self.sno))[0:48] )
+        self.slug = str(str(self.title) +""+str(self.category)+str(random.randint(0, 99))+str(self.sno))[0:48] 
         super().save(*args, **kwargs)
 
     def __str__(self):
