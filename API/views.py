@@ -9,7 +9,7 @@ from django.forms.models import model_to_dict
 @api_view(['POST','GET'])
 def home(request):
     prices_query = Post.objects.filter(category='Price').order_by('-timestamp')[:3]
-    news_query = Post.objects.filter(category='News').order_by('-timestamp')[:3]
+    news_query = Post.objects.filter(category='News').order_by('-timestamp')[:4]
     prices = PostSerializer(prices_query,many=True).data
     news = PostSerializer(news_query,many=True).data
     print("no error here")
