@@ -55,7 +55,7 @@ class Contact(models.Model):
     email = models.CharField(max_length=50,blank = True)
     phone = models.CharField(max_length=13,blank=True)
     message = models.CharField(max_length=2000,blank=True)
-    plan = models.CharField(max_length = 10,blank=True)
+    # plan = models.CharField(max_length = 10,blank=True)
 
     def __stt__(self):
         return self.name
