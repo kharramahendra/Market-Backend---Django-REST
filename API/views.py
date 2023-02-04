@@ -44,12 +44,11 @@ def contact(request):
         name = request.data.get('name')
         phone = request.data.get('phone')
         message = request.data.get('message')
-        plan = request.data.get('plan')
 
         print('api called')
         if "@" in str(email) and str(email).endswith('.com'):
             if len(name) > 2 and len(phone) == 10:
-                contact = Contact(name=name,email=email,phone=phone,message=message,plan=plan)
+                contact = Contact(name=name,email=email,phone=phone,message=message)
                 contact.save()
                 return Response({"success":True})
             return Response({"success":False,"message":"Too small Name or Phone"})
