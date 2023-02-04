@@ -26,6 +26,8 @@ class Keyword(models.Model):
     def __str__(self):
         return self.choice
 
+import random
+# print(random.randint(0, 9))
 
 
 class Post(models.Model):
@@ -40,7 +42,7 @@ class Post(models.Model):
     image_url = models.CharField(max_length=1000,default="",blank=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title[0:48])
+        self.slug = slugify((str(self.title) +""+str(self.category)+str(random.randint(0, 99))+str(self.sno))[48] )
         super().save(*args, **kwargs)
 
     def __str__(self):
