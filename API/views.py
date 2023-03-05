@@ -1,4 +1,4 @@
-from .postser import PostSerializer,KeywordSerializer
+from .postser import PostSerializer,KeywordSerializer,PostSerializer2
 from rest_framework import serializers
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
@@ -32,7 +32,7 @@ def search(request):
 def single_post(request):
     slug = request.data.get('slug')
     post_query = Post.objects.get(slug=slug)
-    post = PostSerializer(post_query).data
+    post = PostSerializer2(post_query).data
     print(post)
     return Response({"post":post})
 
