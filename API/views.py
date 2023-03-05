@@ -62,7 +62,6 @@ def contact(request):
 
 @api_view(['POST','GET'])
 def prices(request):
-    
     posts_query = Post.objects.filter(category='Price').order_by('-timestamp')
     posts = PostSerializer(posts_query,many=True).data
     return Response({"posts":posts})
@@ -70,7 +69,6 @@ def prices(request):
 
 @api_view(['POST','GET'])
 def news(request):
-   
     posts_query = Post.objects.filter(category='News').order_by('-timestamp')
     posts = PostSerializer(posts_query,many=True).data
     return Response({"posts":posts})

@@ -17,6 +17,6 @@ class PostSerializer(serializers.ModelSerializer):
     timestamp=serializers.DateTimeField(format="%d %b, %Y %A")
     class Meta:
         model = Post
-        fields = ['sno','content','slug','title','keywords','category','timestamp','image','image_url']
+        fields = ['sno','slug','title','keywords','category','timestamp','image','image_url']
         depth = 1 
        
