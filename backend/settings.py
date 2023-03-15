@@ -168,6 +168,7 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
+    'extended_valid_elements': 'iframe[src|width|height|name|align]',
     'selector': 'textarea',
     'theme': 'silver',
     'images_upload_url':os.path.join(BASE_DIR,'media'),
