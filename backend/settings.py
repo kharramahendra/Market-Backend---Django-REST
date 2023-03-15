@@ -169,7 +169,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
     'valid_elements': '*[*]',
-    'extended_valid_elements': 'iframe[width|height|align|name|class|src|frameborder|allow|allowfullscreen|style],script[src]',
+    'extended_valid_elements': 'iframe[width|height|align|name|class|className|src|frameborder|allow|allowfullscreen|style],script[src]',
     'selector': 'textarea',
     'theme': 'silver',
     'images_upload_url':os.path.join(BASE_DIR,'media'),
