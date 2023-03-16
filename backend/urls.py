@@ -16,6 +16,7 @@ urlpatterns = [
     path('home/',views.home),
     path('news/',views.news),
     path('prices/',views.prices),
+    path('footer/',views.footer),
 
     path('search/',views.search),
     path('contact/',views.contact),

@@ -15,7 +15,13 @@ def home(request):
     print("no error here")
     return Response({"prices":prices,"news":news})
 
-
+@api_view(['POST','GET'])
+def footer(request):
+    # prices_query = Post.objects.filter(category='Price').order_by('-timestamp')[:6]
+    news_query = Post.objects.filter(category='News').order_by('-timestamp')[:6]
+    # prices = PostSerializer(prices_query,many=True).data
+    news = PostSerializer(news_query,many=True).data
+    return Response({"news":news})
 
 @api_view(['POST','GET'])
 def search(request):
