@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'mandi',
         'USER': 'postgres',
         'PASSWORD': '.adgjm78tensorcodes',
-        'HOST': 'database-2.cjnx2ipizipl.ap-northeast-1.rds.amazonaws.com',
+        'HOST': 'mandi.chrprj7cpmqp.ap-northeast-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
