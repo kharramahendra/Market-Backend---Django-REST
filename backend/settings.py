@@ -72,12 +72,6 @@ mimetypes.add_type("text/css", ".css", True)
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 # DATABASES = {
 #     'default': {
@@ -89,12 +83,12 @@ mimetypes.add_type("text/css", ".css", True)
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mandi',
-        'USER': 'postgres',
-        'PASSWORD': '.adgjm78tensorcodes',
-        'HOST': 'mandi.chrprj7cpmqp.ap-northeast-1.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': '',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -157,10 +151,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000','https://tensorcodes.com',"https://kisanbazaar-kaluramkharra.vercel.app/"
+    'http://localhost:3000',
 ] # If this is used, then not need to use `CORS_ALLOW_ALL_ORIGINS = True`
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    'http://localhost:3000','https://tensorcodes.com',"https://kisanbazaar-kaluramkharra.vercel.app/"
+    'http://localhost:3000',
 ]
 
 
